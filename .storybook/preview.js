@@ -2,6 +2,19 @@ import { action } from "@storybook/addon-actions"
 
 export const parameters = {
     actions: { argTypesRegex: "^on[A-Z].*" },
+    backgrounds: {
+        default: "dark",
+        values: [
+            {
+                name: "dark",
+                value: "#2c2c2c",
+            },
+            {
+                name: "light",
+                value: "white",
+            },
+        ],
+    },
 }
 
 // Gatsby's Link overrides:
