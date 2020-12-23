@@ -5,11 +5,13 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [{
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },],
+    /* Your site config here */
+    plugins: [
+        {
+            resolve: `gatsby-plugin-typography`,
+            options: {
+                pathToConfigModule: `src/utils/typography`,
+            },
+        },
+    ],
 }
