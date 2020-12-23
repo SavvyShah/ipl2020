@@ -10,7 +10,9 @@ export default function Component({ data, title }) {
         <div className={styles.dropdown}>
             <div className={styles.dropdown__head}>
                 <div>{title}</div>
-                <div className={styles.cross}>X</div>
+                <div className={styles.cross}>
+                    <FaTimes />
+                </div>
             </div>
             {data.map((item) => {
                 return (
