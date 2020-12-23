@@ -21,5 +21,6 @@ module.exports = {
         "linebreak-style": ["error", "unix"],
         quotes: ["error", "double", { allowTemplateLiterals: true }],
         semi: ["error", "never"],
+        "import/no-anonymous-default-export": ["error", "never"],
     },
 }
