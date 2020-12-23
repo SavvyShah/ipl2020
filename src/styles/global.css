@@ -1,0 +1,13 @@
+html {
+    --primary-color: #ccc;
+    --secondary-color: #ccc;
+    --primary-bg-color: #2c2c2c;
+    --blue: #11f;
+    --red: #f11;
+    --green: #1f1;
+    --grey: #dbdbdb;
+    --dark-grey: #858585;
+    --black: #2c2c2c;
+    --shadow-dark: #191919;
+    --shadow-light: #ccc;
+}
