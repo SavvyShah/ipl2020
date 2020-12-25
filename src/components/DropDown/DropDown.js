@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import styles from "./DropDown.module.css"
 
-import { FaTimes } from "react-icons/fa"
+import { FiX } from "react-icons/fi"
 
 export default function Component({ data, title }) {
     return (
@@ -11,7 +11,7 @@ export default function Component({ data, title }) {
             <div className={styles.dropdown__head}>
                 <div>{title}</div>
                 <div className={styles.cross}>
-                    <FaTimes />
+                    <FiX />
                 </div>
             </div>
             {data.map((item) => {
