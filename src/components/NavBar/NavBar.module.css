@@ -1,0 +1,40 @@
+.nav {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background: #0c0d15;
+}
+.nav__item {
+    margin: 5px 25px;
+    padding: 5px;
+    font-family: Bai Jamjuree;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: #717178;
+    cursor: pointer;
+}
+.nav__item:hover {
+    color: white;
+}
+.nav__item:active {
+    color: white;
+}
+.logo {
+    padding: 10px;
+    display: flex;
+    background: linear-gradient(315deg, #fff32f 0%, #ffbb16 100%);
+    justify-content: center;
+    align-items: center;
+}
+.logo__img {
+    border-radius: 0px 0px 15px 0px;
+    height: 40px;
+}
