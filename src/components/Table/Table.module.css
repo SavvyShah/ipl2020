@@ -1,0 +1,29 @@
+.table {
+    background: #1d2030;
+    border-radius: 10px;
+    padding: 1rem;
+    border-spacing: 0px 0.3rem;
+}
+.table__head {
+}
+.table__headCell {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    color: #4f4f5b;
+    padding: 1rem 2rem;
+}
+.table__cell {
+    padding: 1rem 2rem;
+}
+.table__row {
+    background: #26293b;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
