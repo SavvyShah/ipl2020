@@ -1,13 +1,29 @@
+/* roboto-300 - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../fonts/Roboto/roboto-v20-latin-300.woff2");
+}
+/* roboto-500 - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/Roboto/roboto-v20-latin-500.woff2");
+}
+/* roboto-700 - latin */
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/Roboto/roboto-v20-latin-700.woff2");
+}
 html {
-    --primary-color: #ccc;
-    --secondary-color: #ccc;
-    --primary-bg-color: #2c2c2c;
-    --blue: #11f;
-    --red: #f11;
-    --green: #1f1;
-    --grey: #dbdbdb;
-    --dark-grey: #858585;
-    --black: #2c2c2c;
-    --shadow-dark: #191919;
-    --shadow-light: #ccc;
+    font-size: 16px;
+}
+@media only screen and (max-width: 500px) {
+    html {
+        font-size: 14px;
+    }
 }
