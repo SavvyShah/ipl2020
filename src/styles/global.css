@@ -19,6 +19,27 @@
     font-weight: 700;
     src: url("../fonts/Roboto/roboto-v20-latin-700.woff2");
 }
+/* bai-jamjuree-regular - latin */
+@font-face {
+    font-family: "Bai Jamjuree";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/Bai/bai-jamjuree-v4-latin-regular.woff2");
+}
+/* bai-jamjuree-500 - latin */
+@font-face {
+    font-family: "Bai Jamjuree";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../fonts/Bai/bai-jamjuree-v4-latin-500.woff2");
+}
+/* bai-jamjuree-700 - latin */
+@font-face {
+    font-family: "Bai Jamjuree";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/Bai/bai-jamjuree-v4-latin-700.woff2");
+}
 html {
     font-size: 16px;
 }
