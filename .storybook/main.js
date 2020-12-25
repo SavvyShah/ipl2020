@@ -26,20 +26,15 @@ module.exports = {
 
         config.module.rules.find(
             (rule) => rule.test.toString() === "/\\.css$/"
-        ).exclude = /\.module\.css$/
-
-        config.module.rules.push({
-            test: /\.module\.css$/,
-            use: [
-                "style-loader",
-                {
-                    loader: "css-loader",
-                    options: {
-                        modules: true,
-                    },
+        ).use = [
+            "style-loader",
+            {
+                loader: "css-loader",
+                options: {
+                    modules: true,
                 },
-            ],
-        })
+            },
+        ]
 
         // Prefer Gatsby ES6 entrypoint (module) over commonjs (main) entrypoint
         config.resolve.mainFields = ["browser", "module", "main"]
