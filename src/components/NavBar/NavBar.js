@@ -22,7 +22,7 @@ export default function Component({ items, logo }) {
 
 Component.propTypes = {
     items: PropTypes.arrayOf(
-        PropTypes.shapeOf({
+        PropTypes.shape({
             name: PropTypes.string.isRequired,
             href: PropTypes.string,
         })
