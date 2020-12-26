@@ -43,6 +43,10 @@
 html {
     font-size: 16px;
 }
+body {
+    margin: 0px;
+    background: #151724;
+}
 @media only screen and (max-width: 500px) {
     html {
         font-size: 14px;
