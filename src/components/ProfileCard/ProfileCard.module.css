@@ -1,0 +1,65 @@
+.card {
+    background: #1d2030;
+    border-radius: 10px;
+    padding: 20px;
+    width: max-content;
+}
+.card__symbolContainer {
+    background: rgba(113, 113, 120, 0.2);
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+}
+.card__symbol {
+    width: 35px;
+}
+.card__firstName {
+    font-family: Bai Jamjuree;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 20px;
+
+    text-transform: capitalize;
+    color: #7a7981;
+}
+.card__lastName {
+    font-family: Bai Jamjuree;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 62px;
+
+    letter-spacing: 0.03em;
+    text-transform: capitalize;
+    color: #e8e8eb;
+}
+.card__profileTable {
+    border-spacing: 0px;
+}
+.card__profileTableField {
+    font-family: Bai Jamjuree;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    display: table-cell;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #7a7981;
+}
+.card__profileTableValue {
+    font-family: Bai Jamjuree;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    display: table-cell;
+    padding: 10px;
+    text-transform: capitalize;
+    color: #e8e8eb;
+}
