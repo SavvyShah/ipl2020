@@ -1,8 +1,25 @@
 .table {
+}
+.table__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #26293b;
+    font-family: Bai Jamjuree;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    text-transform: uppercase;
+    color: #e8e8eb;
+    padding: 1rem;
+    border-radius: 10px 10px 0px 0px;
+}
+.table__main {
     background: #1d2030;
-    border-radius: 10px;
     padding: 1rem;
     border-spacing: 0px 0.3rem;
+    border-radius: 0px 0px 10px 10px;
+    width: 100%;
 }
 .table__head {
 }
@@ -10,8 +27,8 @@
     font-family: Roboto;
     font-style: normal;
     font-weight: bold;
-    font-size: 0.6rem;
-    line-height: 0.6rem;
+    font-size: 0.8rem;
+    line-height: 0.8rem;
     align-items: center;
     text-align: center;
     letter-spacing: 0.05rem;

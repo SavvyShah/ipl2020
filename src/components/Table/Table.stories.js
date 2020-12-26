@@ -114,4 +114,5 @@ Primary.args = {
         { name: "Batting_Hand", element: GreyColor },
     ],
     headers: ["Name", "Country", "Date of birth", "Batting hand"],
+  title: "Players"
 }
