@@ -1,0 +1,14 @@
+.select {
+    background: #49525e;
+    border-radius: 5px;
+    font-family: Bai Jamjuree;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: #e8e8eb;
+    padding: 0.7rem;
+}
