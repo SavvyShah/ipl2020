@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 
 import styles from "./NavBar.module.css"
@@ -9,11 +10,15 @@ export default function Component({ items, logo }) {
             <div className={styles.logo}>
                 <img className={styles.logo__img} alt={"Logo"} src={logo}></img>
             </div>
-            {items.map((item) => {
+            {items.map((item, key) => {
                 return (
-                    <a className={styles.nav__item} href={item.href}>
+                    <Link
+                        key={`${item.name}${key}`}
+                        className={styles.nav__item}
+                        href={item.href}
+                    >
                         {item.name}
-                    </a>
+                    </Link>
                 )
             })}
         </div>
