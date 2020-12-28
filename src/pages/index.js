@@ -35,7 +35,7 @@ function HighlightsLink({ value }) {
     return (
         <td style={{ padding: "1rem 2rem" }}>
             <Link
-                to={`/matches/${Math.ceil(value / 40)}`}
+                to={`/matches/${value}`}
                 className={styles.link}
             >
                 View Highlights
@@ -104,7 +104,7 @@ export default function Home({ data }) {
                 }}
             >
                 <Table
-                    title={"Matches"}
+                    title={"Matches in 2017"}
                     headers={[
                         "Season",
                         "City",
