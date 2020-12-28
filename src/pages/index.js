@@ -91,9 +91,9 @@ export default function Home({ data }) {
             <NavBar
                 logo={logo}
                 items={[
-                    { name: "Teams" },
-                    { name: "Players" },
-                    { name: "Matches" },
+                    { name: "Teams", href: "#" },
+                    { name: "Players", href: "#" },
+                    { name: "Matches", href: "/matches" },
                 ]}
             />
             <div
