@@ -16,6 +16,7 @@ import kkr from "../images/teams/logos/kkr.png"
 import kxip from "../images/teams/logos/kxip.png"
 import srh from "../images/teams/logos/srh.png"
 import rcb from "../images/teams/logos/rcb.png"
+import Layout from "../components/Layout/Layout"
 
 function greyColor({ value }) {
     return <td style={{ color: "grey", padding: "1rem 2rem" }}>{value}</td>
@@ -85,13 +86,7 @@ export default function Home({ data }) {
     return (
         <div>
             <HomeNav />
-            <div
-                style={{
-                    position: "relative",
-                    top: "100px",
-                    fontFamily: "Bai Jamjuree",
-                }}
-            >
+            <Layout>
                 <Table
                     title={"Matches in 2017"}
                     headers={[
@@ -118,7 +113,7 @@ export default function Home({ data }) {
                     ]}
                     records={data.allMatchesCsv.nodes}
                 />
-            </div>
+            </Layout>
         </div>
     )
 }

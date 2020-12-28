@@ -17,6 +17,7 @@ import kkr from "../../images/teams/logos/kkr.png"
 import kxip from "../../images/teams/logos/kxip.png"
 import srh from "../../images/teams/logos/srh.png"
 import rcb from "../../images/teams/logos/rcb.png"
+import Layout from "../../components/Layout/Layout"
 
 const RECORD_LIMIT = 10
 const SEASONS = [
@@ -144,13 +145,7 @@ export default function Home({ data }) {
     return (
         <div>
             <HomeNav />
-            <div
-                style={{
-                    position: "relative",
-                    top: "100px",
-                    fontFamily: "Bai Jamjuree",
-                }}
-            >
+            <Layout>
                 <div style={{ display: "flex" }}>
                     <Select
                         options={CITY}
@@ -194,7 +189,7 @@ export default function Home({ data }) {
                     records={records}
                     uniqueRowId="id"
                 />
-            </div>
+            </Layout>
         </div>
     )
 }
