@@ -1,0 +1,38 @@
+.input {
+    border-radius: 5px;
+    font-family: Bai Jamjuree;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #49525e url(../../images/search.png) no-repeat 9px center;
+    border: 1px solid #49525e;
+    padding: 0.8rem;
+    border-radius: 10px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 3rem;
+    color: transparent;
+    cursor: pointer;
+}
+.input::-webkit-search-decoration,
+.input::-webkit-search-cancel-button {
+    display: none;
+}
+.input:focus {
+    width: 130px;
+    background-color: #fff;
+    border-color: #66cc75;
+    -webkit-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    box-shadow: 0 0 5px rgba(109, 207, 246, 0.5);
+    width: 10rem;
+    padding-left: 32px;
+    color: #000;
+    cursor: auto;
+}
