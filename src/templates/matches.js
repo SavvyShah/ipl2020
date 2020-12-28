@@ -16,16 +16,40 @@ import kxip from "../images/teams/logos/kxip.png"
 import srh from "../images/teams/logos/srh.png"
 import rcb from "../images/teams/logos/rcb.png"
 
-const style = {padding: "1rem 2rem", textAlign:"center"}
-
 function greyColor({ value }) {
-  return <td style={{ ..style, color: "grey" }}>{value}</td>
+    return (
+        <td
+            style={{ padding: "1rem 2rem", textAlign: "center", color: "grey" }}
+        >
+            {value}
+        </td>
+    )
 }
 function whiteColor({ value }) {
-    return <td style={{ ..style,color: "white" }}>{value}</td>
+    return (
+        <td
+            style={{
+                padding: "1rem 2rem",
+                textAlign: "center",
+                color: "white",
+            }}
+        >
+            {value}
+        </td>
+    )
 }
 function yellowColor({ value }) {
-    return <td style={{ ..style, color: "yellow" }}>{value}</td>
+    return (
+        <td
+            style={{
+                padding: "1rem 2rem",
+                textAlign: "center",
+                color: "yellow",
+            }}
+        >
+            {value}
+        </td>
+    )
 }
 
 const teams = {
@@ -57,13 +81,17 @@ function icons({ value }) {
                     alignItems: "center",
                 }}
             >
-                <span>{teams[value].alias} </span>
-                <img
-                    style={{ display: "inline-block", marginLeft: 5 }}
-                    src={teams[value].logo}
-                    width="30px"
-                    alt="team"
-                />
+                {teams[value] && (
+                    <>
+                        <span>{teams[value].alias} </span>
+                        <img
+                            style={{ display: "inline-block", marginLeft: 5 }}
+                            src={teams[value].logo}
+                            width="30px"
+                            alt="team"
+                        />
+                    </>
+                )}
             </div>
         </td>
     )
@@ -78,9 +106,9 @@ export default function Home({ data }) {
             <NavBar
                 logo={logo}
                 items={[
-                    { name: "Teams" },
-                    { name: "Players" },
-                    { name: "Matches" },
+                    { name: "Teams", href: "/teams" },
+                    { name: "Players", href: "/players" },
+                    { name: "Matches", href: "/matches" },
                 ]}
             />
             <div
@@ -91,7 +119,7 @@ export default function Home({ data }) {
                 }}
             >
                 <Table
-                    title={"Matches"}
+                    title={"Highlights"}
                     headers={[
                         "over",
                         "inning",
@@ -111,7 +139,7 @@ export default function Home({ data }) {
                         { name: "bowling_team", element: icons },
                         { name: "batsman", element: whiteColor },
                         { name: "bowler", element: whiteColor },
-                        { name: "dismissal_kind", element: greyColor },
+                        { name: "dismissal_kind", element: whiteColor },
                         { name: "batsman_runs", element: whiteColor },
                     ]}
                     records={records}
