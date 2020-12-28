@@ -19,7 +19,14 @@ function getValue(path = "", data = {}) {
     }
 }
 
-export default function Table({ headers, fields, records, style, title }) {
+export default function Table({
+    headers,
+    fields,
+    records,
+    style,
+    title,
+    uniqueRowId,
+}) {
     if (typeof records !== "object" && typeof records.length !== "number") {
         return null
     }
@@ -46,7 +53,7 @@ export default function Table({ headers, fields, records, style, title }) {
                         return (
                             <tr
                                 className={styles.table__row}
-                                key={record.id || key}
+                                key={getValue(uniqueRowId, record) || key}
                             >
                                 {fields.map((field, fieldKey) => {
                                     const Element = field.element
@@ -74,4 +81,5 @@ Table.propTypes = {
         PropTypes.shape({ name: PropTypes.string, element: PropTypes.any })
     ).isRequired,
     records: PropTypes.arrayOf(PropTypes.object).isRequired,
+    uniqueRowId: PropTypes.string,
 }
