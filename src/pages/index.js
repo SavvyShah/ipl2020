@@ -6,16 +6,8 @@ import styles from "./home.module.css"
 import HomeNav from "../components/HomeNav"
 import Table from "../components/Table/Table"
 
-import csk from "../images/teams/logos/csk.png"
-import mi from "../images/teams/logos/mi.png"
-import dd from "../images/teams/logos/dd.png"
-import gl from "../images/teams/logos/gl.png"
-import ktk from "../images/teams/logos/ktk.png"
-import pwi from "../images/teams/logos/pwi.png"
-import kkr from "../images/teams/logos/kkr.png"
-import kxip from "../images/teams/logos/kxip.png"
-import srh from "../images/teams/logos/srh.png"
-import rcb from "../images/teams/logos/rcb.png"
+import teams from "../components/IplTeams"
+
 import Layout from "../components/Layout/Layout"
 
 function greyColor({ value }) {
@@ -39,20 +31,6 @@ function HighlightsLink({ value }) {
             </Link>
         </td>
     )
-}
-
-const teams = {
-    "Sunrisers Hyderabad": { logo: srh, alias: "SRH" },
-    "Mumbai Indians": { logo: mi, alias: "MI" },
-    "Gujarat Lions": { logo: gl, alias: "GL" },
-    "Kolkata Knight Riders": { logo: kkr, alias: "KKR" },
-    "Rising Pune Supergiant": { logo: pwi, alias: "PWI" },
-    "Kings XI Punjab": { logo: kxip, alias: "KXIP" },
-    "Delhi Daredevils": { logo: dd, alias: "DD" },
-    "Royal Challengers Bangalore": { logo: rcb, alias: "RCB" },
-    "Chennai Super Kings": { logo: csk, alias: "CSK" },
-    "Kochi Tuskers Kerala": { logo: ktk, alias: "KTK" },
-    "Deccan Chargers": { logo: srh, alias: "DC" },
 }
 
 function icons({ value }) {
