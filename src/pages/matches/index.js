@@ -1,21 +1,51 @@
-import React from "react"
+import React, { useState, useRef } from "react"
 import { graphql, Link } from "gatsby"
 
 import styles from "./home.module.css"
 
-import HomeNav from "../components/HomeNav"
-import Table from "../components/Table/Table"
+import HomeNav from "../../components/HomeNav"
+import Table from "../../components/Table/Table"
+import Select from "../../components/Select/Select"
 
-import csk from "../images/teams/logos/csk.png"
-import mi from "../images/teams/logos/mi.png"
-import dd from "../images/teams/logos/dd.png"
-import gl from "../images/teams/logos/gl.png"
-import ktk from "../images/teams/logos/ktk.png"
-import pwi from "../images/teams/logos/pwi.png"
-import kkr from "../images/teams/logos/kkr.png"
-import kxip from "../images/teams/logos/kxip.png"
-import srh from "../images/teams/logos/srh.png"
-import rcb from "../images/teams/logos/rcb.png"
+import csk from "../../images/teams/logos/csk.png"
+import mi from "../../images/teams/logos/mi.png"
+import dd from "../../images/teams/logos/dd.png"
+import gl from "../../images/teams/logos/gl.png"
+import ktk from "../../images/teams/logos/ktk.png"
+import pwi from "../../images/teams/logos/pwi.png"
+import kkr from "../../images/teams/logos/kkr.png"
+import kxip from "../../images/teams/logos/kxip.png"
+import srh from "../../images/teams/logos/srh.png"
+import rcb from "../../images/teams/logos/rcb.png"
+
+const RECORD_LIMIT = 10
+const SEASONS = [
+    "IPL-2019",
+    "IPL-2018",
+    "IPL-2017",
+    "IPL-2016",
+    "IPL-2015",
+    "IPL-2014",
+]
+const CITY = [
+    "Hyderabad",
+    "Pune",
+    "Rajkot",
+    "Indore",
+    "Bangalore",
+    "Mumbai",
+    "Kolkata",
+    "Delhi",
+    "Chandigarh",
+    "Cape Town",
+    "Durban",
+    "Port Elizabeth",
+    "Centurion",
+    "Jaipur",
+    "Chennai",
+    "Johannesburg",
+    "Bloemfontein",
+]
 
 function greyColor({ value }) {
     return <td style={{ color: "grey", padding: "1rem 2rem" }}>{value}</td>
@@ -69,19 +99,48 @@ function icons({ value }) {
                     alignItems: "center",
                 }}
             >
-                <span>{teams[value].alias} </span>
-                <img
-                    style={{ display: "inline-block", marginLeft: 5 }}
-                    src={teams[value].logo}
-                    width="30px"
-                    alt="team"
-                />
+                {teams[value] && (
+                    <>
+                        <span>{teams[value].alias} </span>
+                        <img
+                            style={{ display: "inline-block", marginLeft: 5 }}
+                            src={teams[value].logo}
+                            width="30px"
+                            alt="team"
+                        />
+                    </>
+                )}
             </div>
         </td>
     )
 }
 
+function firstFew(data) {
+    return data.filter((x, key) => key < RECORD_LIMIT)
+}
+
 export default function Home({ data }) {
+    const matches = data.allMatchesCsv.nodes
+    const [records, setRecords] = useState(firstFew(matches))
+    const citySelect = useRef()
+    const seasonSelect = useRef()
+    const selectChange = () => {
+        const selectedSeason = seasonSelect.current.value
+        const selectedCity = citySelect.current.value
+        const selected = { Season: selectedSeason, city: selectedCity }
+
+        setRecords(
+            matches.filter((record) => {
+                for (let prop in selected) {
+                    if (selected[prop] && selected[prop] !== record[prop]) {
+                        return false
+                    }
+                }
+                return true
+            })
+        )
+    }
+
     return (
         <div>
             <HomeNav />
@@ -92,8 +151,24 @@ export default function Home({ data }) {
                     fontFamily: "Bai Jamjuree",
                 }}
             >
+                <div style={{ display: "flex" }}>
+                    <Select
+                        options={CITY}
+                        name="City"
+                        selectRef={citySelect}
+                        onChange={selectChange}
+                        className={styles.select}
+                    />
+                    <Select
+                        options={SEASONS}
+                        name="Season"
+                        selectRef={seasonSelect}
+                        onChange={selectChange}
+                        className={styles.select}
+                    />
+                </div>
                 <Table
-                    title={"Matches in 2017"}
+                    title={"Matches"}
                     headers={[
                         "Season",
                         "City",
@@ -116,7 +191,8 @@ export default function Home({ data }) {
                         { name: "venue", element: greyColor },
                         { name: "id", element: HighlightsLink },
                     ]}
-                    records={data.allMatchesCsv.nodes}
+                    records={records}
+                    uniqueRowId="id"
                 />
             </div>
         </div>
@@ -124,8 +200,8 @@ export default function Home({ data }) {
 }
 
 export const query = graphql`
-    query MyQuery {
-        allMatchesCsv(limit: 30) {
+    query MyAllMatchQuery {
+        allMatchesCsv {
             nodes {
                 Season
                 city

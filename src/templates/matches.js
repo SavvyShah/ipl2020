@@ -1,10 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import NavBar from "../components/NavBar/NavBar"
+import HomeNav from "../components/HomeNav"
 import Table from "../components/Table/Table"
 
-import logo from "../images/logo.png"
 import csk from "../images/teams/logos/csk.png"
 import mi from "../images/teams/logos/mi.png"
 import dd from "../images/teams/logos/dd.png"
@@ -103,14 +102,7 @@ export default function Home({ data }) {
     )
     return (
         <div>
-            <NavBar
-                logo={logo}
-                items={[
-                    { name: "Teams", href: "/teams" },
-                    { name: "Players", href: "/players" },
-                    { name: "Matches", href: "/matches" },
-                ]}
-            />
+            <HomeNav />
             <div
                 style={{
                     position: "relative",
