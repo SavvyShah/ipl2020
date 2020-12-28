@@ -15,7 +15,7 @@ export default function Component({ items, logo }) {
                     <Link
                         key={`${item.name}${key}`}
                         className={styles.nav__item}
-                        href={item.href}
+                        to={item.href}
                     >
                         {item.name}
                     </Link>
