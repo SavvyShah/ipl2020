@@ -22,5 +22,6 @@ module.exports = {
                 typeName: typeNameFromDir,
             },
         },
+        `gatsby-plugin-preload-fonts`,
     ],
 }
