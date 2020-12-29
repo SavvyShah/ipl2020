@@ -15,9 +15,9 @@ export default function ProfileCard({ symbol, name, profile }) {
             <div className={styles.card__lastName}>{name.split(/\s+/)[1]}</div>
             <table className={styles.card__profileTable}>
                 <tbody>
-                    {Object.keys(profile).map((prop) => {
+                    {Object.keys(profile).map((prop, key) => {
                         return (
-                            <tr className={styles.card__profileTableRow}>
+                            <tr key={key} className={styles.card__profileTableRow}>
                                 <td className={styles.card__profileTableField}>
                                     {prop}
                                 </td>

@@ -27,7 +27,7 @@ const symbols = {
 }
 
 const RECORD_LIMIT = 10
-const SEARCH_AFTER_MILLISECS = 1000
+const SEARCH_AFTER_MILLISECS = 500
 
 function firstFew(data) {
     return data.filter((x, key) => key < RECORD_LIMIT)
