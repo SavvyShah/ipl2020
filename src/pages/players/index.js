@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
 import { graphql } from "gatsby"
 
 import HomeNav from "../../components/HomeNav"
@@ -34,15 +34,15 @@ function firstFew(data) {
 }
 
 export default function Home({ data }) {
-    let timer
+    const timer = useRef()
     const players = data.allPlayersCsv.nodes
     const [records, setRecords] = useState(firstFew(players))
     const [search, setSearch] = useState("")
     const handleSearch = (e) => {
         let currentVal = e.target.value
         setSearch(e.target.value)
-        clearTimeout(timer)
-        timer = setTimeout(() => {
+        clearTimeout(timer.current)
+        timer.current = setTimeout(() => {
             const regexStr = currentVal.split(/\s+/)
             const firstNameRegex =
                 regexStr[0] && new RegExp(`^${regexStr[0]}`, "i")
